@@ -7,3 +7,16 @@ public class Test
         System.out.println("Package Demonstration");
     }
 }
+
+
+
+import mypack.Test;
+
+class PackageDemo
+{
+    public static void main(String args[])
+    {
+        Test t = new Test();
+        t.show();
+    }
+}

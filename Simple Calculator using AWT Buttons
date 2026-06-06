@@ -1,0 +1,53 @@
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class CalculatorApplet extends Applet implements ActionListener
+{
+    TextField t1,t2,t3;
+    Button add,sub,mul,div;
+
+    public void init()
+    {
+        t1=new TextField(10);
+        t2=new TextField(10);
+        t3=new TextField(15);
+
+        add=new Button("Add");
+        sub=new Button("Subtract");
+        mul=new Button("Multiply");
+        div=new Button("Divide");
+
+        add(t1);
+        add(t2);
+        add(t3);
+
+        add(add);
+        add(sub);
+        add(mul);
+        add(div);
+
+        add.addActionListener(this);
+        sub.addActionListener(this);
+        mul.addActionListener(this);
+        div.addActionListener(this);
+    }
+
+    public void actionPerformed(ActionEvent ae)
+    {
+        int a=Integer.parseInt(t1.getText());
+        int b=Integer.parseInt(t2.getText());
+
+        if(ae.getSource()==add)
+            t3.setText(""+(a+b));
+
+        if(ae.getSource()==sub)
+            t3.setText(""+(a-b));
+
+        if(ae.getSource()==mul)
+            t3.setText(""+(a*b));
+
+        if(ae.getSource()==div)
+            t3.setText(""+(a/b));
+    }
+}

@@ -1,0 +1,23 @@
+class Student
+{
+    int rollno;
+
+    Student(int rollno)
+    {
+        this.rollno = rollno;
+    }
+
+    void display()
+    {
+        System.out.println("Roll No = " + rollno);
+    }
+}
+
+class ThisDemo
+{
+    public static void main(String args[])
+    {
+        Student s = new Student(101);
+        s.display();
+    }
+}

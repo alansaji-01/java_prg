@@ -1,0 +1,44 @@
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class StudentApplet extends Applet implements ActionListener
+{
+    Label l1,l2;
+    TextField t1,t2;
+    Button b;
+
+    String name="",roll="";
+
+    public void init()
+    {
+        l1=new Label("Name");
+        l2=new Label("Roll No");
+
+        t1=new TextField(20);
+        t2=new TextField(20);
+
+        b=new Button("Submit");
+
+        add(l1);
+        add(t1);
+        add(l2);
+        add(t2);
+        add(b);
+
+        b.addActionListener(this);
+    }
+
+    public void actionPerformed(ActionEvent ae)
+    {
+        name=t1.getText();
+        roll=t2.getText();
+        repaint();
+    }
+
+    public void paint(Graphics g)
+    {
+        g.drawString("Name : "+name,50,120);
+        g.drawString("Roll No : "+roll,50,140);
+    }
+}

@@ -1,0 +1,39 @@
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class DrawEraseApplet extends Applet
+implements ActionListener
+{
+    Button draw,erase;
+    boolean flag=false;
+
+    public void init()
+    {
+        draw=new Button("DRAW");
+        erase=new Button("ERASE");
+
+        add(draw);
+        add(erase);
+
+        draw.addActionListener(this);
+        erase.addActionListener(this);
+    }
+
+    public void actionPerformed(ActionEvent ae)
+    {
+        if(ae.getSource()==draw)
+            flag=true;
+
+        if(ae.getSource()==erase)
+            flag=false;
+
+        repaint();
+    }
+
+    public void paint(Graphics g)
+    {
+        if(flag)
+            g.drawLine(50,50,200,200);
+    }
+}

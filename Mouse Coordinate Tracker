@@ -1,0 +1,31 @@
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class MouseTracker extends Applet
+implements MouseMotionListener
+{
+    int x=0,y=0;
+
+    public void init()
+    {
+        addMouseMotionListener(this);
+    }
+
+    public void mouseMoved(MouseEvent me)
+    {
+        x=me.getX();
+        y=me.getY();
+        repaint();
+    }
+
+    public void mouseDragged(MouseEvent me)
+    {
+    }
+
+    public void paint(Graphics g)
+    {
+        g.drawString("X Coordinate = "+x,50,50);
+        g.drawString("Y Coordinate = "+y,50,70);
+    }
+}

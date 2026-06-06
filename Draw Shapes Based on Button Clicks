@@ -1,0 +1,43 @@
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class ShapeApplet extends Applet
+implements ActionListener
+{
+    Button circle,rect,oval;
+    String shape="";
+
+    public void init()
+    {
+        circle=new Button("Circle");
+        rect=new Button("Rectangle");
+        oval=new Button("Oval");
+
+        add(circle);
+        add(rect);
+        add(oval);
+
+        circle.addActionListener(this);
+        rect.addActionListener(this);
+        oval.addActionListener(this);
+    }
+
+    public void actionPerformed(ActionEvent ae)
+    {
+        shape=ae.getActionCommand();
+        repaint();
+    }
+
+    public void paint(Graphics g)
+    {
+        if(shape.equals("Circle"))
+            g.drawOval(100,100,100,100);
+
+        if(shape.equals("Rectangle"))
+            g.drawRect(100,100,120,80);
+
+        if(shape.equals("Oval"))
+            g.drawOval(100,100,150,80);
+    }
+}

@@ -1,0 +1,39 @@
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class ColorApplet extends Applet implements ActionListener
+{
+    TextField t;
+    Button red,blue,green;
+
+    public void init()
+    {
+        t=new TextField("Hello Java",20);
+
+        red=new Button("Red");
+        blue=new Button("Blue");
+        green=new Button("Green");
+
+        add(t);
+        add(red);
+        add(blue);
+        add(green);
+
+        red.addActionListener(this);
+        blue.addActionListener(this);
+        green.addActionListener(this);
+    }
+
+    public void actionPerformed(ActionEvent ae)
+    {
+        if(ae.getSource()==red)
+            t.setForeground(Color.red);
+
+        if(ae.getSource()==blue)
+            t.setForeground(Color.blue);
+
+        if(ae.getSource()==green)
+            t.setForeground(Color.green);
+    }
+}

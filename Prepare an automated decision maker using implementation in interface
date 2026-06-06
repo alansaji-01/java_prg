@@ -1,0 +1,21 @@
+interface Decision
+{
+    void decide(int mark);
+}
+
+class Result implements Decision
+{
+    public void decide(int mark)
+    {
+        if(mark >= 50)
+            System.out.println("PASS");
+        else
+            System.out.println("FAIL");
+    }
+
+    public static void main(String args[])
+    {
+        Result r = new Result();
+        r.decide(65);
+    }
+}

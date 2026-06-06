@@ -1,0 +1,22 @@
+class Test
+{
+    int a;
+
+    Test(int x)
+    {
+        a = x;
+    }
+
+    void display(Test t)
+    {
+        System.out.println("Value = " + t.a);
+    }
+
+    public static void main(String args[])
+    {
+        Test obj1 = new Test(50);
+        Test obj2 = new Test(100);
+
+        obj1.display(obj2);
+    }
+}
